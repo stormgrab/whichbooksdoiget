@@ -42,3 +42,13 @@ a:hover,a:focus{
     background-color: #FCC;
     border: solid 1px #C66;
 }
+
+.badge{
+	background-color: #999;
+	color:rgb(34,34,34);
+}
+
+.ninjaButton{
+	background-color: rgb(238,238,238);
+	border: none;
+}

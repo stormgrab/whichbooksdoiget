@@ -10,22 +10,38 @@
 	{{HTML::style('css/custom.css') }}
 </head>
 <body>
-	<nav class="navbar navbar-inverse" role="navigation">
-		<div class="navbar-header">
-			<a href={{route('index')}} class="navbar-brand">Which Books Do I Get</a>
-		</div>
 
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				@if(Auth::check())
-					<li class="navbar-text">Welcome {{Auth::user()->username}}</li>
-					<li><a href={{route('profile')}}>Profile</a></li>
-					<li><a href={{route('logout')}}>Logout</a></li>
-				@else
-					<li><a href={{route('login')}}>Login</a></li>
-					<li><a href={{route('register')}}>Register</a></li>
-				@endif
-			</ul>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a href={{route('index')}} class="navbar-brand">Which Books Do I Get</a>
+			</div>
+
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					@if(Auth::check())
+						<li class="navbar-text">Welcome {{Auth::user()->username}}</li>
+						<li><a href={{route('profile')}}>Profile</a></li>
+						<li>
+							<a href="{{route('cart')}}" class=" ">
+								View Cart
+								<span class="badge">
+									@if(!Session::has('books'))
+										0
+									@else
+										{{count(Session::get('books'))}}
+									@endif
+								</span>
+							</a></li>
+						<li><a href={{route('logout')}}>Logout</a></li>
+						
+						
+					@else
+						<li><a href={{route('login')}}>Login</a></li>
+						<li><a href={{route('register')}}>Register</a></li>
+					@endif
+				</ul>
+			</div>
 		</div>
 	</nav>
 	

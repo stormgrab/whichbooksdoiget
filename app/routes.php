@@ -41,4 +41,10 @@ Route::get('register',array('as'=>'register','uses'=>'UserController@create'))->
 Route::post('register','UserController@store');
 Route::get('editProfile',array('as'=>'editProfile','uses'=>'UserController@edit'))->before('auth');
 Route::put('editProfile','UserController@update');
+
+Route::get('cart/{id}',array('as'=>'cart.create','uses'=>'CartController@create'))->before('auth');
+Route::get('cart',array('as'=>'cart','uses'=>'CartController@index'))->before('auth');
+Route::get('cart.multiple',array('as'=>'cart.getBooks','uses'=>'CartController@getBooks'))->before('auth');
+Route::delete('cart/{id}',array('as'=>'cart.delete','uses'=>'CartController@destroy'));
+
 ?>

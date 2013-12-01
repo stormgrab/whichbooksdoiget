@@ -28,7 +28,8 @@ class UserController extends BaseController {
 
 	public function logout(){
 		Auth::logout();
-
+		Session::flush();
+		
 	    return Redirect::route('index')
 	        ->with('flash_notice', 'You are successfully logged out.');
 	}

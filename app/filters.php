@@ -37,7 +37,7 @@ Route::filter('auth', function()
 {
 	if (Auth::guest()) 
 		return Redirect::route('login')
-		                       ->with('flash_error', 'You must be logged in to view this page!');
+		                       ->with('flash_error', 'Please login to view this page.');
 });
 
 
@@ -61,7 +61,7 @@ Route::filter('guest', function()
 {
 	if (Auth::check()) 
 		return Redirect::route('index')
-                        ->with('flash_notice', 'You are already logged in!');
+                        ->with('flash_notice', 'You have already logged in!');
 });
 
 /*

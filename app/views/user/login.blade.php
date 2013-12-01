@@ -1,11 +1,7 @@
 @section('content')
-	<h1>Please Sign In</h1>
+	<h1>Login</h1>
 
-    @if (Session::has('flash_error'))
-        <div id="flash_error">{{ Session::get('flash_error') }}</div>
-    @endif
-
-    {{ Form::open(array('route'=>'login','method'=>'POST','role'=>'form','class'=>'form-horizontal')) }}
+	{{ Form::open(array('route'=>'login','method'=>'POST','role'=>'form','class'=>'form-horizontal')) }}
 
 	    <div class="form-group">
 	        {{ Form::label('username', 'Username',array('class'=>'col-sm-2 control-label')) }}
