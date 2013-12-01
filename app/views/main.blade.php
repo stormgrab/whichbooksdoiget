@@ -27,7 +27,7 @@
 								View Cart
 								<span class="badge">
 									@if(!Session::has('books'))
-										0
+										{{"0"}}
 									@else
 										{{count(Session::get('books'))}}
 									@endif

@@ -1,4 +1,7 @@
 @section('content')
+<ol class="breadcrumb">
+	<li><a href={{URL::previous()}}>Back</a></li>
+</ol>
 	@if(Session::has('books'))
 		<?php $total = 0; ?>
 		<table class="table">

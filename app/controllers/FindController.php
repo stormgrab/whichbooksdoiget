@@ -39,6 +39,7 @@ class FindController extends BaseController {
 							'books'=> $books,
 							'subjects'=>$subjects,
 							'university'=>$university,
+							'degree'=>$degree,
 						));
 		
 	}
