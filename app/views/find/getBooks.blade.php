@@ -34,7 +34,7 @@
 				@foreach($books as $book)
 					@if($book->subject_id == $subject->id)
 						<div class="col-md-2">
-							<a href = {{route('bookInfo',$book->id)}} >
+							<a href = {{route('bookInfo',array('university'=>$university->id,'degree'=>$degree->id,'semester'=>$semester,'book'=>$book->id))}} >
 								<img src="{{constant("PUBLIC").$book->image}}" height=200 width=150/>
 							</a>
 						</div>

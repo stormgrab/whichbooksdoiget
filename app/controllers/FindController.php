@@ -40,14 +40,23 @@ class FindController extends BaseController {
 							'subjects'=>$subjects,
 							'university'=>$university,
 							'degree'=>$degree,
+							'semester'=>$semester,
 						));
 		
 	}
 
-	public function bookInfo($id){
-		$book = Book::find($id);
+	public function bookInfo($university,$degree,$semester,$book){
+		$book = Book::find($book);
+		$university = University::find($university);
+		$degree = Degree::find($degree);
 
-		$this->layout->content = View::make('find.bookInfo')->with('book',$book);
+		$this->layout->content = View::make('find.bookInfo')
+									->with(array(
+										'book'=>$book,
+										'semester'=>$semester,
+										'university'=>$university,
+										'degree'=>$degree,	
+										));
 	}
 
 

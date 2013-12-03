@@ -1,4 +1,11 @@
 @section('content')
+	<ol class="breadcrumb">
+		<li><a href={{route('index')}}>Home</a></li>
+		<li><a href={{route('find.university')}}>Select University</a></li>
+		<li><a href={{route('find.degree',$university->id)}}>Select Branch</a></li>
+		<li><a href={{route('find.semester',array('university'=>$university->id,'degree'=>$degree->id))}}>Select Semester</a></li>
+		<li><a href="{{route('getBooks',array('university'=>$university->id,'degree'=>$degree->id,'semester'=>$semester))}}">Select Book</a></li>
+	</ol>
 	<div class="media">
 		<a class="pull-left" href="#">
 			<img class="media-object" src="/whichbooksdoiget/public/thumbnails/{{$book->image}}" height=300 width=225>

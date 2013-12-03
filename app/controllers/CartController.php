@@ -23,7 +23,7 @@ class CartController extends BaseController {
 	}
 
 	public function getBooks(){
-		foreach(Session::get('getBooks') as $id)
+		foreach(Session::get('getbooks') as $id)
 			if(!Session::has('books') OR !in_array($id, Session::get('books')))
 				Session::push('books',$id);
 

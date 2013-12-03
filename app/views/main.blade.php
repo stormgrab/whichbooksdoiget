@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Which Books Do I Get</title>
+	<title>Which Books Do I Get?</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{{HTML::style('css/bootstrap.min.css')}}
 	{{HTML::style('css/bootstrap-responsive.min.css') }}
@@ -14,7 +14,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a href={{route('index')}} class="navbar-brand">Which Books Do I Get</a>
+				<a href={{route('index')}} class="navbar-brand">Which Books Do I Get?</a>
 			</div>
 
 			<div class="collapse navbar-collapse">

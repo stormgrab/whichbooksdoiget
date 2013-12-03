@@ -30,7 +30,7 @@ Route::get('/find',array('as'=>'find.university','uses'=>'FindController@selectU
 Route::get('/find/{university}',array('as'=>'find.degree','uses'=>'FindController@selectDegree'));
 Route::get('/find/{university}/{degree}',array('as'=>'find.semester','uses'=>'FindController@selectSemester'));
 Route::get('/find/{university}/{degree}/{semester}',array('as'=>'getBooks','uses'=>'FindController@getBooks'));
-Route::get('/bookInfo/{id}',array('as'=>'bookInfo','uses'=>'FindController@bookInfo'));
+Route::get('/find/{university}/{degree}/{semester}/{book}',array('as'=>'bookInfo','uses'=>'FindController@bookInfo'));
 
 Route::get('login', array('as' => 'login','uses'=>'UserController@login' ))->before('guest');
 
