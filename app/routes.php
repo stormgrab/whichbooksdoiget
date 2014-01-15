@@ -47,4 +47,7 @@ Route::get('cart',array('as'=>'cart','uses'=>'CartController@index'))->before('a
 Route::get('cart.multiple',array('as'=>'cart.getBooks','uses'=>'CartController@getBooks'))->before('auth');
 Route::delete('cart/{id}',array('as'=>'cart.delete','uses'=>'CartController@destroy'));
 
+Route::get('book.voteup/{id}',array('as'=>'book.voteup','uses'=>'BookController@voteup'))->before('auth');
+Route::get('book.votedown/{id}',array('as'=>'book.votedown','uses'=>'BookController@votedown'))->before('auth');
+
 ?>

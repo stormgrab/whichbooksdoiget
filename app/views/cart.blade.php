@@ -35,4 +35,4 @@
 	
 		<h1>Cart Empty</h1>
 	@endif
-@endsection
+@stop

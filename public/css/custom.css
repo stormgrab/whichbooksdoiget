@@ -52,3 +52,7 @@ a:hover,a:focus{
 	background-color: rgb(238,238,238);
 	border: none;
 }
+
+.votes{
+	margin: 10px 0 0 -10px;
+}

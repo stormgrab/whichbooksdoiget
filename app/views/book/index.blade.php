@@ -1,8 +1,14 @@
 @section('content')
 	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Author</th>
+			<th>Attach University</th>
+		</tr>
 		@foreach($books as $book)
 			<tr>
 				<td><a href={{route('book.show',$book->id)}}>{{ $book->name }}</a></td>
+				<td>{{$book->author}}</td>
 
 				<td>
 					<a href={{route('book.attachUniversity',$book->id)}}>

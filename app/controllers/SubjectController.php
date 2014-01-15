@@ -139,13 +139,12 @@ class SubjectController extends \BaseController {
 		$university = Input::get('university');
 		$semester = Input::get('semester');
 
-		if($subject->universities()->attach($university,array('semester'=>$semester))){
-			return Redirect::route('subject.attachUniversity',$id)
-						  ->with('flash', 'University is attached');
-		}
-		return Redirect::route('subject.attachUniversity',$id)
-						->with('flash', 'University failed to attach');
+		$subject->universities()->attach($university,array('semester'=>$semester));
+		
+		return Redirect::route('subject.index')
+						  ->with('flash_notice', 'University is attached');
 	}
+		
 
 
 }

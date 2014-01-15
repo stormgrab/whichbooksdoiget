@@ -147,12 +147,32 @@ class BookController extends \BaseController {
 		$book = Book::find($id);
 		$university = Input::get('university');
 
-		if($book->universities()->attach($university)){
-			return Redirect::route('book.attachUniversity',$id)
-						  ->with('flash', 'University is attached');
+		$book->universities()->attach($university);
+		return Redirect::route('book.index')
+						  ->with('flash_notice', 'University is attached');
+		
+	}
+
+	public function voteUp($id){
+		$book = Book::find($id);
+		$book->voteup = $book->voteup + 1;
+
+		if( $book->save() )
+		{
+			return Redirect::back()
+			  ->with('flash', 'Your vote has been added');
 		}
-		return Redirect::route('book.attachUniversity',$id)
-						->with('flash', 'University failed to attach');
+	}
+
+	public function voteDown($id){
+		$book = Book::find($id);
+		$book->votedown = $book->votedown + 1;
+
+		if( $book->save() )
+		{
+			return Redirect::back()
+			  ->with('flash', 'Your vote has been added');
+		}
 	}
 
 }
